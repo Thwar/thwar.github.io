@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a responsive pricing table.">
+	<title>Pricing Table &ndash; Layout Examples &ndash; Pure</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/pricing.css">
+        <!--<![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+
+    </head>
+    <body>
+
+    	<style>
+    	@import url(https://fonts.googleapis.com/css?family=Lato);
+    	@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+    	body
+    	{
+    		background-color: #262626;
+    	}
+
+    	.slick-slide img {
+    		margin: 0 auto;
+    		width: 100%;
+    		min-height: 600px;
+    	}
+
+    	.slider{
+    		width: 100%;
+    		height: 600px;
+    		overflow: hidden;
+    	}
+
+    	/*Slider media query*/
+    	@media only screen and (max-width: 1000px) {
+    		.slick-slide img {
+
+    			min-height: 0px;
+    		}
+
+    		.slider{
+    			height: initial;
+    		}
+    	}
+
+    	.slick-dots
+    	{
+    		bottom: 10px;
+    	}
+    	.slick-dots li button:before
+    	{
+    		font-size: 15px;
+    	}
+
+    	p{
+    		color:darkgray;
+    	}
+
+    	h1, h2, h3
+    	{
+    		color: white;
+    	}
+
+    	.pure-menu-heading
+    	{
+    		color:white;
+    		letter-spacing: 4px;
+    	}
+
+    	@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+    	.snip1198 {
+    		font-family: 'Raleway', Arial, sans-serif;
+    		text-align: center;
+    		text-transform: uppercase;
+    		font-weight: 500;
+    		letter-spacing: 1px;
+    	}
+    	.snip1198 * {
+    		-webkit-box-sizing: border-box;
+    		box-sizing: border-box;
+    		-webkit-transition: all 0.35s ease;
+    		transition: all 0.35s ease;
+    	}
+    	.snip1198 li {
+    		display: inline-block;
+    		list-style: outside none none;
+    		margin: 0.4em 0.8em;
+    		padding: 0;
+    	}
+    	.snip1198 a {
+    		padding: 0 0.7em;
+    		color: rgba(255, 255, 255, 0.5);
+    		position: relative;
+    		text-decoration: none;
+    		display: inline-block;
+    	}
+    	.snip1198 a:before {
+    		position: absolute;
+    		content: '';
+    		-webkit-transition: all 0.35s ease;
+    		transition: all 0.35s ease;
+    		opacity: 0;
+    		left: 15%;
+    		right: 15%;
+    		top: 0;
+    		bottom: 0;
+    		border-left: 3px solid white;
+    		border-right: 3px solid white;
+    	}
+    	.snip1198 a:hover,
+    	.snip1198 .current a {
+    		color: #ffffff;
+    	}
+    	.snip1198 a:hover:before,
+    	.snip1198 .current a:before {
+    		opacity: 1;
+    		left: 0;
+    		right: 0;
+    	}
+
+
+
+
+    	body {
+    		font-family: 'Lato', sans-serif;
+
+    		-webkit-font-smoothing: antialiased;
+    	}
+    	a {
+    		text-decoration: none;
+    		color: #fff;
+    	}
+    	p > a:hover{
+    		color: #d9d9d9;
+    		text-decoration:  underline;
+    	}
+
+    	._12 {
+    		font-size: 1.2em;
+    	}
+    	._14 {
+    		font-size: 1.4em;
+    	}
+    	ul {
+    		padding:0;
+    		list-style: none;
+    	}
+    	.footer-social-icons {
+    		width: 350px;
+    		display:block;
+    		margin: 0 auto;
+    	}
+    	.social-icon {
+    		color: #fff;
+    	}
+    	ul.social-icons {
+    		margin-top: 10px;
+    	}
+    	.social-icons li {
+    		vertical-align: top;
+    		display: inline;
+    		height: 100px;
+    	}
+    	.social-icons a {
+    		color: #fff;
+    		text-decoration: none;
+    	}
+
+    	.fa{
+    		font-size: 200%;
+    		width: 30px;
+    		margin: 5px;
+    	}
+    	.fa-facebook {
+    		padding:10px 14px;
+    		-o-transition:.5s;
+    		-ms-transition:.5s;
+    		-moz-transition:.5s;
+    		-webkit-transition:.5s;
+    		transition: .5s;
+    		background-color: #322f30;
+    	}
+    	.fa-facebook:hover {
+    		background-color: #3d5b99;
+    	}
+
+    	.fa-instagram {
+    		padding:10px 14px;
+    		-o-transition:.5s;
+    		-ms-transition:.5s;
+    		-moz-transition:.5s;
+    		-webkit-transition:.5s;
+    		transition: .5s;
+    		background-color: #322f30;
+    	}
+    	.fa-instagram:hover {
+    		background-color: #F07860;
+    	}
+
+    	.box1 {
+
+    		border: 4px solid #00bfb6;
+    		padding: 20px;
+    		text-align: center;
+    		font-weight: 900;
+    		color: #00bfb6;
+    		font-family: arial;
+    		position: relative;
+    	}
+
+    	/* speech bubble 6 */
+
+    	.sb6:before {
+    		content: "";
+    		width: 0px;
+    		height: 0px;
+    		position: absolute;
+    		border-left: 10px solid transparent;
+    		border-right: 10px solid #00bfb6;
+    		border-top: 10px solid #00bfb6;
+    		border-bottom: 10px solid transparent;
+    		left: -21px;
+    		top: 6px;
+    	}
+
+    	.sb6:after {
+    		content: "";
+    		width: 0px;
+    		height: 0px;
+    		position: absolute;
+    		border-left: 7px solid transparent;
+    		border-right: 7px solid #262626;
+    		border-top: 7px solid #262626;
+    		border-bottom: 7px solid transparent;
+    		left: -11px;
+    		top: 10px;
+    	}
+
+    </style>
+
+
+
+
+    <div class="pure-menu pure-menu-horizontal" style="text-align: center">
+    	<a href="#" class="pure-menu-heading">Train With Coach Tina</a>
+    </div>
+
+<!-- <div class="banner">
+    <h1 class="banner-head">
+        Simple Pricing.<br>
+        Try before you buy.
+    </h1>
+</div>
+-->
+
+
+<div class="slider ">
+	<div><img src="main.jpg"></div>
+	<div><img src="main22.jpg"></div>
+
+	<div><img src="https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.0-9/10659218_852641774745818_5859513604999256590_n.jpg?_nc_cat=105&_nc_ht=scontent.fmnl3-2.fna&oh=0f80807281ba6c9a7d9991b753edeaaa&oe=5CD655CD"></div>
+
+	<div><img src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t31.0-8/10557045_880289631981032_6677786551538931609_o.jpg?_nc_cat=108&_nc_ht=scontent.fmnl3-1.fna&oh=b5e3a7eccb0e358f835c45cefe0d4143&oe=5CAB872C
+		"></div>
+
+		<div><img src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t1.0-9/10625108_902582346418427_3441010562971772614_n.jpg?_nc_cat=104&_nc_ht=scontent.fmnl3-1.fna&oh=d7c62fb26eee9c3058af39f4bc695262&oe=5CD97BC7
+			"></div>
+
+		</div>
+
+
+		<ul class="snip1198">
+			<li class="current"><a href="#">Home</a></li>
+			<li><a href="#">Experience</a></li>
+			<li><a href="#">Client Testimonials</a></li>
+			<li><a href="#">Client Progress</a></li>
+			<li><a href="#">Train With Me</a></li>
+		</ul>
+
+		<div class="l-content">
+
+			<div class="information pure-g">
+				<div class="pure-u-1 pure-u-md-1">
+					<h1>Train With Coach Tina!</h1>
+				</div>
+				<div class="pure-u-1 pure-u-md-1-3" style="text-align: center">
+					<div class="l-box">
+						<img style="width: 100%; border-radius: 50%" src="home.jpg">
+
+					</div>
+
+				</div>
+
+				<div class="pure-u-1 pure-u-md-2-3">
+					<div class="l-box">
+						<div class="box1 sb6">
+
+							<h3 >Get started today</h3>
+							<p>
+								Freelance Fitness Coach. As I bring out the best in you. #trainwithcoachtina Philippines. 
+								<br/>
+								You can contact me at viber/sms ➡ 09368913069
+							</p>
+
+							<div class="footer-social-icons">
+								<ul class="social-icons">
+									<li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+									<li><a href="" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- end information -->
+		</div> <!-- end l-content -->
+
+<br/><br/><br/>
+
+		<div class="footer l-box">
+			<p>
+				2019 - Web Template -  Thomas Rosales
+			</p>
+		</div>
+
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+		<script type="text/javascript">
+
+			$('.slider').slick({
+				dots: true,
+				draggable: true,
+				infinite: true,
+				speed: 500,
+				pauseOnFocus: false,
+				pauseOnHover: false,
+				fade: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				cssEase: 'linear'
+			});
+
+
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+
+		</script>
+
+	</body>
+	</html>

@@ -1,1 +1,1 @@
-# http-thwar.github.io
+thwar.github.io
